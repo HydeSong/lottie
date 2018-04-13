@@ -4,8 +4,8 @@ import Lottie from 'react-lottie';
 import * as animationData from './data.json';
 
 class App extends React.Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
             isStopped: false,
             isPaused: false
@@ -17,6 +17,10 @@ class App extends React.Component {
         animationData: animationData,
         renderer: 'canvas'
         };
+
+        this.play = this.play.bind(this);
+        this.stop = this.stop.bind(this);
+        this.pause = this.pause.bind(this);
     }
   
     play() {
